@@ -1,0 +1,53 @@
+{
+	"name": "@zxteam/jsonrpc",
+	"version": "6.0.42",
+	"description": "ZXTeam's JSON-RPC typing, adapters, channels.",
+	"author": {
+		"name": "ZXTeam",
+		"email": "pub@project.zxteam.org",
+		"url": "http://www.zxteam.org"
+	},
+	"contributors": [
+		{
+			"name": "Maxim Anurin",
+			"email": "maxim.anurin@zxteam.org",
+			"url": "http://www.anurin.name"
+		},
+		{
+			"name": "Serhii Zghama",
+			"email": "serhii.zghama@zxteam.org"
+		}
+	],
+	"license": "MIT",
+	"dependencies": {
+		"@zxteam/channels": "^6.0.42",
+		"@zxteam/contract": "^6.0.40",
+		"@zxteam/disposable": "^6.0.23",
+		"@zxteam/ensure": "^6.0.23",
+		"lodash": "^4.17.15"
+	},
+	"devDependencies": {
+		"@types/lodash": "^4.14.149",
+		"@types/node": "^11.15.3",
+		"@zxnode/build": "^0.0.34",
+		"@zxteam/cancellation": "^6.0.25"
+	},
+	"engines": {
+		"node": ">=11"
+	},
+	"keywords": [],
+	"repository": {
+		"type": "git",
+		"url": "ssh://git@code.zxteam.net:22282/pub/node/jsonrpc.git"
+	},
+	"bugs": {
+		"url": "https://dev.zxteam.net/pub/node/jsonrpc/issues"
+	},
+	"homepage": "https://dev.zxteam.net/pub/node/jsonrpc",
+	"scripts": {
+		"build": "zxbuild clean dist && cp README.md .dist/",
+		"test": "nyc --exclude test --extension=\".ts\" --reporter=lcov --reporter=text --reporter=text-summary mocha \"test/**/*.test.js\" --recursive",
+		"test:only": "mocha --require source-map-support/register \"test/**/*.test.js\" --recursive"
+	},
+	"private": true
+}
