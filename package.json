@@ -1,6 +1,6 @@
 {
 	"name": "@zxteam/jsonrpc",
-	"version": "6.0.42",
+	"version": "6.0.43",
 	"description": "ZXTeam's JSON-RPC typing, adapters, channels.",
 	"author": {
 		"name": "ZXTeam",
@@ -22,15 +22,15 @@
 	"dependencies": {
 		"@zxteam/channels": "^6.0.42",
 		"@zxteam/contract": "^6.0.40",
-		"@zxteam/disposable": "^6.0.23",
-		"@zxteam/ensure": "^6.0.23",
+		"@zxteam/disposable": "^6.0.40",
+		"@zxteam/ensure": "^6.0.40",
 		"lodash": "^4.17.15"
 	},
 	"devDependencies": {
 		"@types/lodash": "^4.14.149",
 		"@types/node": "^11.15.3",
 		"@zxnode/build": "^0.0.34",
-		"@zxteam/cancellation": "^6.0.25"
+		"@zxteam/cancellation": "^6.0.40"
 	},
 	"engines": {
 		"node": ">=11"

@@ -38,8 +38,10 @@ export class JsonRpcHostChannel extends Disposable implements PublisherChannel<s
 				const errorReponse: Response.Error = {
 					jsonrpc: "2.0",
 					id: null,
-					code: Response.ErrorCode.InvalidRequest,
-					message: "\"jsonrpc\" should be \"2.0\""
+					error: {
+						code: Response.ErrorCode.InvalidRequest,
+						message: "\"jsonrpc\" should be \"2.0\""
+					}
 				};
 
 				await this.notify({ data: JSON.stringify(errorReponse) });
@@ -56,8 +58,10 @@ export class JsonRpcHostChannel extends Disposable implements PublisherChannel<s
 				const errorReponse: Response.Error = {
 					jsonrpc: "2.0",
 					id: null,
-					code: Response.ErrorCode.InvalidRequest,
-					message: "\"id\" should be a String or Safe Integer"
+					error: {
+						code: Response.ErrorCode.InvalidRequest,
+						message: "\"id\" should be a String or Safe Integer"
+					}
 				};
 
 				await this.notify({ data: JSON.stringify(errorReponse) });
@@ -74,8 +78,10 @@ export class JsonRpcHostChannel extends Disposable implements PublisherChannel<s
 					const errorReponse: Response.Error = {
 						jsonrpc: "2.0",
 						id,
-						code: Response.ErrorCode.InvalidRequest,
-						message: "\"params\" should be a Structured value (Array or Object)"
+						error: {
+							code: Response.ErrorCode.InvalidRequest,
+							message: "\"params\" should be a Structured value (Array or Object)"
+						}
 					};
 
 					await this.notify({ data: JSON.stringify(errorReponse) });
@@ -92,8 +98,10 @@ export class JsonRpcHostChannel extends Disposable implements PublisherChannel<s
 				const errorReponse: Response.Error = {
 					jsonrpc: "2.0",
 					id: null,
-					code: Response.ErrorCode.InvalidRequest,
-					message: e.message
+					error: {
+						code: Response.ErrorCode.InvalidRequest,
+						message: e.message
+					}
 				};
 				await this.notify({ data: JSON.stringify(errorReponse) });
 				return;
@@ -102,8 +110,10 @@ export class JsonRpcHostChannel extends Disposable implements PublisherChannel<s
 				const errorReponse: Response.Error = {
 					jsonrpc: "2.0",
 					id: null,
-					code: Response.ErrorCode.ParseError,
-					message: err.message
+					error: {
+						code: Response.ErrorCode.ParseError,
+						message: err.message
+					}
 				};
 				await this.notify({ data: JSON.stringify(errorReponse) });
 				return;
@@ -126,8 +136,10 @@ export class JsonRpcHostChannel extends Disposable implements PublisherChannel<s
 			const errorReponse: Response.Error = {
 				jsonrpc: "2.0",
 				id,
-				code: Response.ErrorCode.InternalError,
-				message: err.message
+				error: {
+					code: Response.ErrorCode.InternalError,
+					message: err.message
+				}
 			};
 
 			await this.notify({ data: JSON.stringify(errorReponse) });

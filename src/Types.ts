@@ -45,9 +45,11 @@ export namespace Response {
 		readonly result: any;
 	}
 	export interface Error extends Base {
-		readonly code: number;
-		readonly message: string;
-		readonly data?: any;
+		readonly error: {
+			readonly code: number;
+			readonly message: string;
+			readonly data?: any;
+		};
 	}
 }
 export type Response = Response.Success | Response.Error;
