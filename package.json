@@ -24,7 +24,7 @@
 		"@zxteam/contract": "^6.0.40",
 		"@zxteam/disposable": "^6.0.40",
 		"@zxteam/ensure": "^6.0.40",
-		"lodash": "^4.17.15"
+		"lodash": "^4.17.19"
 	},
 	"devDependencies": {
 		"@types/lodash": "^4.14.149",
